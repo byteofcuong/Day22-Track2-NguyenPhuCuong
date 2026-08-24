@@ -112,6 +112,7 @@ Lab/
 │   ├── utils/
 │   │   ├── llm_factory.py             # Factory tạo LLM và Embeddings (5 providers)
 │   │   └── data_loader.py             # Load knowledge base, chunk, build FAISS
+│   ├── prompts.py                     # 2 system prompt V1/V2 (nguồn duy nhất)
 │   ├── qa_pairs.py                    # 50 cặp câu hỏi + đáp án chuẩn
 │   ├── 01_langsmith_rag_pipeline.py   # Bước 1: RAG + LangSmith tracing
 │   ├── 02_prompt_hub_ab_routing.py    # Bước 2: Prompt Hub + A/B routing
@@ -161,6 +162,14 @@ Lab được chia thành 4 nhiệm vụ, mỗi nhiệm vụ 25 điểm (tổng 1
 
 ## Chạy lab
 
+> ⚠️ **Trên Windows phải bật UTF-8 trước khi chạy.** Các script in emoji (✅ 📚 ⚠️),
+> mà console Windows mặc định dùng cp1252 → `UnicodeEncodeError` giữa lúc chạy.
+>
+> ```bash
+> export PYTHONUTF8=1 PYTHONIOENCODING=utf-8    # Git Bash
+> $env:PYTHONUTF8=1; $env:PYTHONIOENCODING="utf-8"   # PowerShell
+> ```
+
 ### Chạy từng bước riêng lẻ
 
 ```bash
@@ -176,7 +185,9 @@ python 02_prompt_hub_ab_routing.py
 python 03_ragas_evaluation.py
 
 # Bước 4: Guardrails AI validators
-python 04_guardrails_validator.py
+python 04_guardrails_validator.py            # cả 2 demo
+python 04_guardrails_validator.py --demo pii   # chỉ demo PII
+python 04_guardrails_validator.py --demo json  # chỉ demo JSON
 ```
 
 ### Chạy toàn bộ lab
@@ -222,12 +233,19 @@ Sử dụng lệnh `tee` để vừa in ra màn hình vừa lưu vào tệp:
 python script.py | tee evidence/output.txt
 ```
 
-Ví dụ cụ thể:
+Ví dụ cụ thể (chạy từ `src/`):
 
 ```bash
-python 02_prompt_hub_ab_routing.py | tee ../evidence/02_ab_routing_log.txt
-python 04_guardrails_validator.py  | tee ../evidence/04_pii_demo_log.txt
+python 01_langsmith_rag_pipeline.py            | tee ../evidence/01_rag_pipeline_log.txt
+python 02_prompt_hub_ab_routing.py             | tee ../evidence/02_ab_routing_log.txt
+python 03_ragas_evaluation.py                  | tee ../evidence/03_ragas_console.txt
+python 04_guardrails_validator.py --demo pii   | tee ../evidence/04_pii_demo_log.txt
+python 04_guardrails_validator.py --demo json  | tee ../evidence/04_json_demo_log.txt
+cp ../data/ragas_report.json ../evidence/03_ragas_report.json
 ```
+
+> Bước 4 có `--demo` để tách 2 file log riêng theo yêu cầu evidence; gọi không
+> đối số (như `run_all.py` làm) vẫn chạy cả 2 demo như cũ.
 
 ### 4. Push lên GitHub và nộp
 

@@ -30,8 +30,13 @@ OPENAI_EMBEDDING_MODEL = os.getenv("OPENAI_EMBEDDING_MODEL", "text-embedding-3-s
 
 # ── Google Gemini ─────────────────────────────────────────────────────────
 GOOGLE_API_KEY          = os.getenv("GOOGLE_API_KEY", "")
-GEMINI_MODEL            = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
-GEMINI_EMBEDDING_MODEL  = os.getenv("GEMINI_EMBEDDING_MODEL", "models/embedding-001")
+# gemini-2.0-flash / models/embedding-001 (mặc định gốc của lab) đã bị Google
+# ngừng phục vụ (trả 404 "no longer available"). gemini-2.5-flash thay thế thì
+# free tier chỉ cho 20 request/NGÀY (không phải /phút — không retry được).
+# gemini-flash-lite-latest chỉ giới hạn 15 request/PHÚT nên retry/backoff xử lý
+# được — đã xác minh bằng burst test thật trên tài khoản.
+GEMINI_MODEL            = os.getenv("GEMINI_MODEL", "gemini-flash-lite-latest")
+GEMINI_EMBEDDING_MODEL  = os.getenv("GEMINI_EMBEDDING_MODEL", "models/gemini-embedding-001")
 
 # ── Anthropic ─────────────────────────────────────────────────────────────
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")

@@ -26,5 +26,9 @@ env/
 # macOS
 .DS_Store
 
-# Lab outputs (không commit, chỉ nộp evidence/)
-data/ragas_report.json
+# Lab outputs
+# LƯU Ý: data/ragas_report.json PHẢI được commit (rubric yêu cầu) → không ignore.
+
+# Cache trung gian của Bước 3 (không phải deliverable)
+data/.rag_cache_*.json
+data/.ragas_scores_*.json

@@ -1,0 +1,23 @@
+============================================================
+  Bước 3: RAGAS Evaluation
+============================================================
+✅ Config OK  |  Provider: OPENAI  |  Project: day22-nguyenphucuong
+🔨 Đang tạo FAISS index từ 107 chunks (batch=20) ...
+  … đã embed 20/107 chunks
+  … đã embed 40/107 chunks
+  … đã embed 60/107 chunks
+  … đã embed 80/107 chunks
+  … đã embed 100/107 chunks
+  … đã embed 107/107 chunks
+✅ FAISS vectorstore đã sẵn sàng.
+
+♻️  Dùng lại 50 kết quả RAG đã cache cho prompt v1 (.rag_cache_v1.json)
+
+♻️  Dùng lại 50 kết quả RAG đã cache cho prompt v2 (.rag_cache_v2.json)
+
+✂️  Giới hạn đánh giá v1: 15/50 cặp QA
+
+📐 Đang đánh giá RAGAS cho prompt v1 ... (vui lòng chờ ~5-10 phút)
+Evaluating:   0%|          | 0/60 [00:00<?, ?it/s]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:   2%|▏         | 1/60 [01:30<1:29:19, 90.84s/it]Evaluating:   5%|▌         | 3/60 [03:21<1:01:20, 64.58s/it]Evaluating:   7%|▋         | 4/60 [03:43<46:34, 49.90s/it]  

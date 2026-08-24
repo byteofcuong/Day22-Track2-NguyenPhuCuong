@@ -8,6 +8,7 @@ Cách dùng:
     chunks      = split_text(text, chunk_size=500, chunk_overlap=50)
     vectorstore = build_vectorstore(chunks, embeddings)
 """
+import time
 from pathlib import Path
 
 
@@ -50,20 +51,46 @@ def split_text(text: str, chunk_size: int = 500, chunk_overlap: int = 50) -> lis
     return splitter.split_text(text)
 
 
-def build_vectorstore(chunks: list, embeddings):
+def build_vectorstore(chunks: list, embeddings, batch_size: int = 20, pause_sec: float = 3.0):
     """
     Tạo FAISS vectorstore từ danh sách chunks và embeddings.
 
     Args:
         chunks    : list[str] — danh sách text chunks đã chia
         embeddings: Embeddings instance (từ get_embeddings())
+        batch_size: số chunk embed mỗi lần gọi API
+        pause_sec : thời gian nghỉ giữa các batch (giây)
 
     Returns:
         FAISS vectorstore đã được index và sẵn sàng dùng để retrieve
+
+    Lưu ý: FAISS.from_texts() gọi embeddings.embed_documents(chunks) trong MỘT
+    lần duy nhất. Với các provider free-tier có giới hạn request/phút thấp
+    (vd. Gemini free tier: ~100 request/phút), việc dồn toàn bộ chunks vào 1-2
+    batch lớn (langchain_google_genai mặc định batch_size=100) sẽ vượt ngưỡng
+    ngay ở lần build đầu tiên. Ở đây embed theo batch nhỏ + nghỉ giữa các batch
+    + retry khi gặp lỗi tạm thời, để hoạt động ổn định với mọi provider mà
+    không cần biết trước giới hạn cụ thể của từng nơi.
     """
     from langchain_community.vectorstores import FAISS
+    from utils.retry import call_with_backoff
 
-    print(f"🔨 Đang tạo FAISS index từ {len(chunks)} chunks ...")
-    vectorstore = FAISS.from_texts(chunks, embeddings)
+    print(f"🔨 Đang tạo FAISS index từ {len(chunks)} chunks "
+          f"(batch={batch_size}) ...")
+
+    all_vectors = []
+    for i in range(0, len(chunks), batch_size):
+        batch = chunks[i:i + batch_size]
+        vectors = call_with_backoff(
+            lambda b=batch: embeddings.embed_documents(b),
+            label=f"embed batch {i // batch_size + 1}",
+        )
+        all_vectors.extend(vectors)
+        print(f"  … đã embed {len(all_vectors)}/{len(chunks)} chunks")
+        if i + batch_size < len(chunks):
+            time.sleep(pause_sec)
+
+    text_embeddings = list(zip(chunks, all_vectors))
+    vectorstore = FAISS.from_embeddings(text_embeddings, embeddings)
     print("✅ FAISS vectorstore đã sẵn sàng.")
     return vectorstore
