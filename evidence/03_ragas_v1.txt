@@ -1,0 +1,35 @@
+============================================================
+  Bước 3: RAGAS Evaluation
+============================================================
+✅ Config OK  |  Provider: OPENAI  |  Project: day22-nguyenphucuong
+🔨 Đang tạo FAISS index từ 107 chunks (batch=20) ...
+  … đã embed 20/107 chunks
+  … đã embed 40/107 chunks
+  … đã embed 60/107 chunks
+  … đã embed 80/107 chunks
+  … đã embed 100/107 chunks
+  … đã embed 107/107 chunks
+✅ FAISS vectorstore đã sẵn sàng.
+
+♻️  Dùng lại 50 kết quả RAG đã cache cho prompt v1 (.rag_cache_v1.json)
+
+📐 Đang đánh giá RAGAS cho prompt v1 ... (vui lòng chờ ~5-10 phút)
+Evaluating:   0%|          | 0/200 [00:00<?, ?it/s]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:   0%|          | 1/200 [00:46<2:32:41, 46.04s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:   1%|          | 2/200 [02:37<4:39:03, 84.56s/it]Evaluating:   2%|▏         | 3/200 [03:44<4:10:31, 76.30s/it]Evaluating:   2%|▎         | 5/200 [04:50<2:48:44, 51.92s/it]Evaluating:   3%|▎         | 6/200 [05:12<2:20:10, 43.35s/it]Evaluating:   4%|▎         | 7/200 [06:19<2:41:10, 50.11s/it]Evaluating:   4%|▍         | 8/200 [06:41<2:14:02, 41.89s/it]Exception raised in Job[0]: TimeoutError()
+Exception raised in Job[4]: TimeoutError()
+Exception raised in Job[3]: TimeoutError()
+Exception raised in Job[11]: APIConnectionError(Connection error.)
+Exception raised in Job[10]: APIConnectionError(Connection error.)
+Exception raised in Job[9]: APIConnectionError(Connection error.)
+Evaluating:   6%|▌         | 12/200 [07:03<59:51, 19.10s/it] Evaluating:   8%|▊         | 16/200 [07:47<46:57, 15.31s/it]Evaluating:   8%|▊         | 17/200 [08:54<1:09:13, 22.70s/it]Exception raised in Job[17]: APIConnectionError(Connection error.)
+Exception raised in Job[16]: APIConnectionError(Connection error.)
+Evaluating:   9%|▉         | 18/200 [10:00<1:31:33, 30.18s/it]Exception raised in Job[20]: APIConnectionError(Connection error.)
+Exception raised in Job[22]: APIConnectionError(Connection error.)
+Exception raised in Job[21]: APIConnectionError(Connection error.)
+Exception raised in Job[19]: APIConnectionError(Connection error.)
+Evaluating:  10%|█         | 21/200 [10:22<1:01:18, 20.55s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  13%|█▎        | 26/200 [11:07<42:34, 14.68s/it]  Evaluating:  14%|█▎        | 27/200 [12:14<1:01:16, 21.25s/it]Evaluating:  14%|█▍        | 28/200 [12:57<1:10:40, 24.66s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  14%|█▍        | 29/200 [15:55<2:27:48, 51.86s/it]Exception raised in Job[27]: TimeoutError()
+Exception raised in Job[28]: TimeoutError()
+Exception raised in Job[32]: TimeoutError()
