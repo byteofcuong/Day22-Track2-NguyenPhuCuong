@@ -243,19 +243,27 @@ def run_ragas_eval(rag_results: list, version: str) -> dict:
     # Tính mean score cho mỗi metric
     # result["faithfulness"] trả về list of floats → dùng np.mean()
     scores = {}
+    valid_counts = {}
     for key in METRIC_NAMES:
         raw   = result[key]
         valid = [v for v in raw if v is not None and not (isinstance(v, float) and np.isnan(v))]
         scores[key] = float(np.mean(valid)) if valid else float("nan")
+        valid_counts[key] = f"{len(valid)}/{len(raw)}"
         if len(valid) < len(raw):
             print(f"  ⚠️  {key}: {len(raw) - len(valid)}/{len(raw)} sample trả về NaN "
                   f"(đã loại khỏi trung bình)")
 
+    # Ghi kèm số sample thực sự tính được cho mỗi metric. Nếu chỉ lưu điểm trung
+    # bình, người đọc sẽ tưởng cả 50 sample đều được chấm — trong khi RAGAS bỏ
+    # sót một phần do timeout khi gọi LLM judge.
+    scores["_valid_samples"] = valid_counts
+
     # In kết quả
     print(f"\n📊 Kết quả RAGAS — Prompt {version.upper()}:")
-    for k, v in scores.items():
+    for k in METRIC_NAMES:            # bỏ qua khoá phụ "_valid_samples"
+        v = scores[k]
         star = " ⭐" if k == "faithfulness" and v >= 0.8 else ""
-        print(f"  {k:30s}: {v:.4f}{star}")
+        print(f"  {k:30s}: {v:.4f}{star}  (n={valid_counts[k]})")
 
     # Cache ngay để lần chạy sau (nếu đứt ở V2) không phải tính lại version này
     score_cache.parent.mkdir(parents=True, exist_ok=True)
@@ -350,6 +358,9 @@ def main():
             "provider":        config.PROVIDER,
             "llm_model":       config.OPENAI_MODEL,
             "embedding_model": config.OPENAI_EMBEDDING_MODEL,
+            # n_samples_* = số cặp QA ĐƯA VÀO đánh giá. Số cặp THỰC SỰ chấm được
+            # cho từng metric nằm ở prompt_v*_scores["_valid_samples"] — RAGAS trả
+            # NaN cho một phần sample khi LLM judge bị timeout.
             "n_samples_v1":    min(len(v1_results), EVAL_LIMIT or len(v1_results)),
             "n_samples_v2":    min(len(v2_results), EVAL_LIMIT or len(v2_results)),
             "n_qa_pairs_total": len(QA_PAIRS),

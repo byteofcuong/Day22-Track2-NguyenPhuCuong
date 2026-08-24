@@ -1,0 +1,43 @@
+{
+  "prompt_v1_scores": {
+    "faithfulness": 0.9846153846153847,
+    "answer_relevancy": 0.9041636055748816,
+    "context_recall": 1.0,
+    "context_precision": 0.9262820512113782,
+    "_valid_samples": {
+      "faithfulness": "26/50",
+      "answer_relevancy": "39/50",
+      "context_recall": "41/50",
+      "context_precision": "26/50"
+    }
+  },
+  "prompt_v2_scores": {
+    "faithfulness": 0.9306124431124432,
+    "answer_relevancy": 0.9135433783043265,
+    "context_recall": 1.0,
+    "context_precision": 0.9078947367730261,
+    "_valid_samples": {
+      "faithfulness": "26/50",
+      "answer_relevancy": "44/50",
+      "context_recall": "43/50",
+      "context_precision": "19/50"
+    }
+  },
+  "target_met": true,
+  "meta": {
+    "provider": "openai",
+    "llm_model": "gpt-4o-mini",
+    "embedding_model": "text-embedding-3-small",
+    "n_samples_v1": 50,
+    "n_samples_v2": 50,
+    "n_qa_pairs_total": 50,
+    "eval_limit": null,
+    "retriever_k": 3,
+    "metrics": [
+      "faithfulness",
+      "answer_relevancy",
+      "context_recall",
+      "context_precision"
+    ]
+  }
+}

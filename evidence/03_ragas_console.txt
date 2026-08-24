@@ -15,14 +15,29 @@
 
 ♻️  Dùng lại 50 kết quả RAG đã cache cho prompt v2 (.rag_cache_v2.json)
 
-✂️  Giới hạn đánh giá v1: 15/50 cặp QA
+♻️  Dùng lại điểm RAGAS đã cache cho prompt v1 (.ragas_scores_v1.json)
+  faithfulness                  : 0.9846
+  answer_relevancy              : 0.9042
+  context_recall                : 1.0000
+  context_precision             : 0.9263
 
-📐 Đang đánh giá RAGAS cho prompt v1 ... (vui lòng chờ ~5-10 phút)
-Evaluating:   0%|          | 0/60 [00:00<?, ?it/s]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
-LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
-Evaluating:   2%|▏         | 1/60 [01:30<1:29:19, 90.84s/it]Evaluating:   5%|▌         | 3/60 [03:21<1:01:20, 64.58s/it]Evaluating:   7%|▋         | 4/60 [03:43<46:34, 49.90s/it]  Evaluating:   8%|▊         | 5/60 [04:51<51:03, 55.70s/it]Exception raised in Job[3]: TimeoutError()
-Exception raised in Job[7]: TimeoutError()
-Exception raised in Job[0]: TimeoutError()
-Exception raised in Job[4]: TimeoutError()
-Evaluating:  10%|█         | 6/60 [05:15<40:58, 45.53s/it]Evaluating:  17%|█▋        | 10/60 [06:21<22:20, 26.82s/it]Evaluating:  20%|██        | 12/60 [06:43<17:28, 21.84s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
-Evaluating:  22%|██▏       | 13/60 [07:28<20:28, 26.13s/it]
+♻️  Dùng lại điểm RAGAS đã cache cho prompt v2 (.ragas_scores_v2.json)
+  faithfulness                  : 0.9306
+  answer_relevancy              : 0.9135
+  context_recall                : 1.0000
+  context_precision             : 0.9079
+
+=================================================================
+  Metric                                V1        V2  Winner
+=================================================================
+  faithfulness                      0.9846    0.9306  ← V1
+  answer_relevancy                  0.9042    0.9135  ← V2
+  context_recall                    1.0000    1.0000  ← V2
+  context_precision                 0.9263    0.9079  ← V1
+
+✅ Đạt mục tiêu: faithfulness = 0.9846 ≥ 0.8
+
+💡 Phân tích: faithfulness phản ánh độ dài câu trả lời (V1 ngắn → ít
+   khẳng định ngoài context); context_recall/precision gần bằng nhau vì
+   cả 2 version dùng chung retriever k=3 trên cùng FAISS index.
+💾 Đã lưu báo cáo vào D:\Direc of code\Vin\Day22-Track2-NguyenPhuCuong\data\ragas_report.json

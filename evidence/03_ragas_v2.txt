@@ -32,4 +32,92 @@ LLM returned 1 generations instead of requested 3. Proceeding with 1 generations
 Exception raised in Job[28]: TimeoutError()
 Exception raised in Job[23]: TimeoutError()
 Exception raised in Job[24]: TimeoutError()
-Evaluating:  16%|█▋        | 33/200 [15:33<45:48, 16.46s/it]  
+Evaluating:  16%|█▋        | 33/200 [15:33<45:48, 16.46s/it]  Exception raised in Job[31]: APIConnectionError(Connection error.)
+Exception raised in Job[32]: APIConnectionError(Connection error.)
+Evaluating:  17%|█▋        | 34/200 [16:39<1:04:34, 23.34s/it]Evaluating:  18%|█▊        | 36/200 [17:01<54:19, 19.88s/it]  LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  18%|█▊        | 37/200 [17:46<1:05:08, 23.98s/it]Exception raised in Job[37]: APIConnectionError(Connection error.)
+Exception raised in Job[39]: APIConnectionError(Connection error.)
+Exception raised in Job[38]: APIConnectionError(Connection error.)
+Exception raised in Job[36]: APIConnectionError(Connection error.)
+Evaluating:  19%|█▉        | 38/200 [18:52<1:26:55, 32.20s/it]Evaluating:  21%|██        | 42/200 [19:14<47:56, 18.21s/it]  LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  22%|██▏       | 43/200 [19:59<58:26, 22.33s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  22%|██▏       | 44/200 [20:43<1:08:35, 26.38s/it]Exception raised in Job[35]: TimeoutError()
+Evaluating:  23%|██▎       | 46/200 [21:27<1:04:00, 24.94s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  25%|██▌       | 50/200 [21:29<31:54, 12.76s/it]  Evaluating:  26%|██▌       | 52/200 [21:30<23:43,  9.62s/it]Evaluating:  28%|██▊       | 55/200 [21:31<15:01,  6.22s/it]Evaluating:  28%|██▊       | 56/200 [21:32<13:01,  5.43s/it]Evaluating:  28%|██▊       | 57/200 [21:54<19:51,  8.33s/it]Evaluating:  29%|██▉       | 58/200 [24:07<1:18:02, 32.97s/it]Exception raised in Job[48]: TimeoutError()
+LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  31%|███       | 62/200 [24:51<49:06, 21.35s/it]  Evaluating:  32%|███▏      | 63/200 [27:26<1:37:24, 42.66s/it]Exception raised in Job[63]: TimeoutError()
+Exception raised in Job[64]: TimeoutError()
+Evaluating:  34%|███▍      | 68/200 [28:10<54:15, 24.66s/it]  LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  34%|███▍      | 69/200 [29:17<1:06:01, 30.24s/it]Exception raised in Job[67]: TimeoutError()
+Exception raised in Job[68]: TimeoutError()
+Evaluating:  36%|███▌      | 72/200 [31:08<1:09:39, 32.65s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  37%|███▋      | 74/200 [32:37<1:14:55, 35.68s/it]Exception raised in Job[72]: TimeoutError()
+Exception raised in Job[71]: TimeoutError()
+Evaluating:  38%|███▊      | 77/200 [32:59<52:35, 25.66s/it]  LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  39%|███▉      | 78/200 [33:44<57:56, 28.50s/it]Evaluating:  40%|███▉      | 79/200 [34:08<55:44, 27.64s/it]Evaluating:  40%|████      | 80/200 [34:09<44:54, 22.46s/it]Evaluating:  42%|████▏     | 83/200 [34:11<24:11, 12.40s/it]Exception raised in Job[75]: TimeoutError()
+Evaluating:  42%|████▎     | 85/200 [34:34<23:21, 12.19s/it]Evaluating:  43%|████▎     | 86/200 [36:02<48:59, 25.78s/it]Evaluating:  44%|████▍     | 89/200 [37:09<44:48, 24.22s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  46%|████▌     | 91/200 [38:16<48:57, 26.95s/it]Evaluating:  46%|████▌     | 92/200 [38:38<47:01, 26.12s/it]Evaluating:  46%|████▋     | 93/200 [39:00<45:11, 25.34s/it]Evaluating:  47%|████▋     | 94/200 [40:29<1:09:22, 39.27s/it]Exception raised in Job[87]: TimeoutError()
+Exception raised in Job[91]: TimeoutError()
+Exception raised in Job[97]: APIConnectionError(Connection error.)
+Exception raised in Job[95]: APIConnectionError(Connection error.)
+Exception raised in Job[94]: APIConnectionError(Connection error.)
+Exception raised in Job[96]: APIConnectionError(Connection error.)
+Evaluating:  48%|████▊     | 97/200 [40:51<40:50, 23.79s/it]  Evaluating:  51%|█████     | 102/200 [41:36<25:50, 15.82s/it]Evaluating:  52%|█████▏    | 103/200 [41:58<26:55, 16.66s/it]Evaluating:  52%|█████▏    | 104/200 [42:42<33:42, 21.07s/it]Evaluating:  52%|█████▎    | 105/200 [43:04<33:40, 21.27s/it]Exception raised in Job[103]: APIConnectionError(Connection error.)
+Exception raised in Job[106]: APIConnectionError(Connection error.)
+Evaluating:  53%|█████▎    | 106/200 [44:11<48:09, 30.74s/it]Exception raised in Job[105]: APIConnectionError(Connection error.)
+Exception raised in Job[108]: APIConnectionError(Connection error.)
+Exception raised in Job[104]: APIConnectionError(Connection error.)
+Evaluating:  54%|█████▍    | 108/200 [44:22<32:40, 21.31s/it]Exception raised in Job[107]: APIConnectionError(Connection error.)
+LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  56%|█████▋    | 113/200 [44:23<13:21,  9.21s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  57%|█████▋    | 114/200 [44:24<11:35,  8.09s/it]Evaluating:  58%|█████▊    | 116/200 [44:24<08:06,  5.79s/it]Evaluating:  58%|█████▊    | 117/200 [44:24<06:42,  4.85s/it]Evaluating:  59%|█████▉    | 118/200 [44:25<05:35,  4.09s/it]Evaluating:  60%|██████    | 120/200 [44:38<06:28,  4.85s/it]Evaluating:  60%|██████    | 121/200 [45:44<22:54, 17.40s/it]Evaluating:  62%|██████▏   | 124/200 [46:51<24:50, 19.62s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  64%|██████▎   | 127/200 [50:32<50:14, 41.29s/it]Exception raised in Job[127]: TimeoutError()
+Evaluating:  65%|██████▌   | 130/200 [50:54<33:47, 28.97s/it]Exception raised in Job[128]: TimeoutError()
+LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  66%|██████▋   | 133/200 [52:01<29:45, 26.64s/it]Exception raised in Job[131]: TimeoutError()
+Exception raised in Job[132]: TimeoutError()
+Evaluating:  68%|██████▊   | 136/200 [53:52<32:01, 30.02s/it]Evaluating:  69%|██████▉   | 138/200 [54:36<29:04, 28.14s/it]Evaluating:  70%|██████▉   | 139/200 [54:58<27:43, 27.28s/it]Evaluating:  70%|███████   | 140/200 [55:43<30:14, 30.25s/it]Exception raised in Job[135]: TimeoutError()
+Evaluating:  71%|███████   | 142/200 [56:05<23:08, 23.93s/it]Evaluating:  72%|███████▏  | 143/200 [57:11<30:26, 32.04s/it]Exception raised in Job[142]: TimeoutError()
+Exception raised in Job[141]: TimeoutError()
+Exception raised in Job[139]: TimeoutError()
+Evaluating:  73%|███████▎  | 146/200 [57:34<18:51, 20.96s/it]Exception raised in Job[143]: APIConnectionError(Connection error.)
+Exception raised in Job[144]: APIConnectionError(Connection error.)
+Evaluating:  74%|███████▍  | 149/200 [57:56<13:18, 15.65s/it]Evaluating:  75%|███████▌  | 150/200 [58:18<13:53, 16.67s/it]Evaluating:  76%|███████▌  | 151/200 [59:24<21:03, 25.79s/it]Exception raised in Job[148]: APIConnectionError(Connection error.)
+Evaluating:  76%|███████▋  | 153/200 [1:00:09<19:13, 24.54s/it]Exception raised in Job[152]: APIConnectionError(Connection error.)
+Exception raised in Job[151]: APIConnectionError(Connection error.)
+Evaluating:  77%|███████▋  | 154/200 [1:00:53<21:48, 28.44s/it]Exception raised in Job[156]: APIConnectionError(Connection error.)
+Exception raised in Job[154]: APIConnectionError(Connection error.)
+Exception raised in Job[153]: APIConnectionError(Connection error.)
+Evaluating:  78%|███████▊  | 156/200 [1:01:15<16:16, 22.19s/it]Evaluating:  80%|███████▉  | 159/200 [1:01:37<10:45, 15.74s/it]Evaluating:  80%|████████  | 160/200 [1:02:22<13:46, 20.65s/it]Evaluating:  80%|████████  | 161/200 [1:02:44<13:37, 20.95s/it]Exception raised in Job[155]: TimeoutError()
+LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  82%|████████▏ | 163/200 [1:03:50<15:38, 25.37s/it]Evaluating:  82%|████████▏ | 164/200 [1:07:10<36:38, 61.07s/it]Exception raised in Job[163]: TimeoutError()
+Evaluating:  84%|████████▍ | 169/200 [1:07:32<14:10, 27.44s/it]Exception raised in Job[167]: TimeoutError()
+Evaluating:  86%|████████▌ | 171/200 [1:08:17<12:37, 26.11s/it]Exception raised in Job[168]: TimeoutError()
+Evaluating:  86%|████████▋ | 173/200 [1:09:23<12:35, 27.99s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  87%|████████▋ | 174/200 [1:10:52<16:19, 37.67s/it]Evaluating:  88%|████████▊ | 175/200 [1:11:36<16:12, 38.90s/it]Exception raised in Job[172]: TimeoutError()
+Exception raised in Job[175]: TimeoutError()
+Evaluating:  88%|████████▊ | 177/200 [1:12:21<12:42, 33.15s/it]Exception raised in Job[171]: TimeoutError()
+Exception raised in Job[176]: TimeoutError()
+Evaluating:  90%|████████▉ | 179/200 [1:13:49<12:53, 36.84s/it]Evaluating:  90%|█████████ | 181/200 [1:14:11<09:02, 28.56s/it]Exception raised in Job[179]: TimeoutError()
+Exception raised in Job[180]: TimeoutError()
+Evaluating:  92%|█████████▏| 183/200 [1:14:56<07:31, 26.55s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  92%|█████████▏| 184/200 [1:15:40<07:58, 29.89s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  92%|█████████▎| 185/200 [1:18:37<15:07, 60.47s/it]Exception raised in Job[187]: TimeoutError()
+Evaluating:  95%|█████████▌| 190/200 [1:19:00<04:29, 27.00s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  96%|█████████▌| 191/200 [1:19:44<04:25, 29.53s/it]LLM returned 1 generations instead of requested 3. Proceeding with 1 generations.
+Evaluating:  96%|█████████▌| 192/200 [1:20:18<04:02, 30.26s/it]Exception raised in Job[188]: TimeoutError()
+Evaluating:  98%|█████████▊| 196/200 [1:20:19<01:01, 15.41s/it]Evaluating:  98%|█████████▊| 197/200 [1:20:20<00:39, 13.29s/it]Evaluating:  99%|█████████▉| 198/200 [1:20:21<00:22, 11.10s/it]Evaluating: 100%|█████████▉| 199/200 [1:20:33<00:11, 11.19s/it]Evaluating: 100%|██████████| 200/200 [1:20:55<00:00, 13.63s/it]Evaluating: 100%|██████████| 200/200 [1:20:55<00:00, 24.28s/it]
+  ⚠️  faithfulness: 24/50 sample trả về NaN (đã loại khỏi trung bình)
+  ⚠️  answer_relevancy: 6/50 sample trả về NaN (đã loại khỏi trung bình)
+  ⚠️  context_recall: 7/50 sample trả về NaN (đã loại khỏi trung bình)
+  ⚠️  context_precision: 31/50 sample trả về NaN (đã loại khỏi trung bình)
+
+📊 Kết quả RAGAS — Prompt V2:
+  faithfulness                  : 0.9306 ⭐
+  answer_relevancy              : 0.9135
+  context_recall                : 1.0000
+  context_precision             : 0.9079
+  💾 Đã cache điểm vào .ragas_scores_v2.json
+
+✅ Đã đánh giá xong V2. Chạy lại không có --only để tổng hợp báo cáo.
